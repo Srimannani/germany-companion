@@ -583,8 +583,48 @@
 
   /* Responsive */
   @media (max-width: 700px) {
-    .app { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
+
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .chat-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .chat-header-left h2 {
+    font-size: 18px;
+  }
+
+  .mode-pills {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .messages {
+    padding: 16px;
+  }
+
+  .input-bar {
+    padding: 12px;
+  }
+
+  .quick-prompts {
+    padding: 0 16px 10px;
+    flex-wrap: wrap;
+  }
+
+  .qp-btn {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
   }
 </style>
 </head>
@@ -751,7 +791,7 @@
 </div>
 
 <script>
-const API = ''; // empty = same origin; change to 'http://localhost:8000' for dev
+const API = 'https://germany-companion.onrender.com';
 let currentMode = 'chat';
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
@@ -853,7 +893,7 @@ async function sendMessage() {
     addMsg('ai', formatText(data.reply));
   } catch(e) {
     removeTyping(typingId);
-    addMsg('ai', '⚠️ Could not reach the backend. Make sure the server is running at <code>localhost:8000</code>.');
+    addMsg('ai', '⚠️ Network issue. Please refresh or try again.');
   }
   document.getElementById('sendBtn').disabled = false;
 }
