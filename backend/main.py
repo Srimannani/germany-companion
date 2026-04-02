@@ -20,7 +20,7 @@ app.add_middleware(
 )
 
 # ─── CONFIG ─────────────────────────────────────────────
-GEMINI_KEY = "AIzaSyB5RweeD79UVZxfM6aF09PIozXJN67jPzE"
+GEMINI_KEY = os.getenv("GEMINI_API_KEY")
 
 GEMINI_MODELS = [
     "gemini-3.1-flash-lite-preview",  # try
