@@ -250,10 +250,9 @@ Skills: {profile['skills']}
 frontend_path = os.path.join(os.path.dirname(__file__), "..", "frontend")
 
 if os.path.exists(frontend_path):
-    app.mount("/static", StaticFiles(directory=os.path.join(frontend_path, "static")), name="static")
 
     @app.get("/")
-    def home():
+    def serve_frontend():
         return FileResponse(os.path.join(frontend_path, "index.html"))
 
 if __name__ == "__main__":
