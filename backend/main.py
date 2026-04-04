@@ -23,9 +23,9 @@ GEMINI_KEY = os.getenv("GEMINI_API_KEY")
 
 # Best free-tier model order: highest RPD first
 GEMINI_MODELS = [
-    "gemini-3.1-flash-lite-preview",  # 500 RPD — primary workhorse
-    "gemini-2.5-flash",               # 20 RPD  — better quality fallback
-    "gemini-2.5-flash-lite",          # 20 RPD  — last resort
+    "gemini-2.0-flash",               # primary workhorse
+    "gemini-1.5-flash",               # fallback
+    "gemini-1.5-flash-8b",            # last resort
 ]
 
 DB_PATH = "companion.db"
